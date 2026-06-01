@@ -6,10 +6,10 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
-export default function SignupPage() {
+export default function LoginPage() {
   return (
     <ContainerAuth>
-      <HeaderAuth>Sign Up For Best Experience</HeaderAuth>
+      <HeaderAuth>Welcome Back</HeaderAuth>
       <form className="mt-8 w-full space-y-4">
         <Field>
           <FieldLabel htmlFor="email" className="font-medium text-xl">
@@ -18,7 +18,7 @@ export default function SignupPage() {
           <Input id="email" placeholder="youremail@domain.com" />
         </Field>
         <Button className="w-full font-semibold text-[22px] py-6">
-          Signup
+          Continue
         </Button>
       </form>
       <span className="text-lg my-4 text-center">Or</span>
@@ -27,11 +27,13 @@ export default function SignupPage() {
         className="w-full font-semibold text-[22px] py-6 relative"
       >
         <GoogleIcon />
-        Signup with Google
+        Continue with Google
       </Button>
-      <p className="font-medium mt-16 text-center">Already have an account?</p>
-      <Link href={"/auth/signin"} className="font-bold mt-4 text-center">
-        Login
+      <p className="font-medium mt-16 text-center">
+        Don&apos;t have an account?
+      </p>
+      <Link href={"/auth/signup"} className="font-bold mt-4 text-center">
+        Signup
       </Link>
     </ContainerAuth>
   );
