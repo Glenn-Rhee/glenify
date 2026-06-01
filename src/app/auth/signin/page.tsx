@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export default function LoginPage() {
-  const isSendOTP = true;
+  const isSendOTP = false;
   return (
     <ContainerAuth>
       <HeaderAuth className={cn(isSendOTP && "mb-24")}>
