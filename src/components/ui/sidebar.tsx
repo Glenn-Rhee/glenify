@@ -22,7 +22,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { PanelLeftIcon, PanelRight } from "lucide-react";
+import { ChevronLeft, PanelLeftIcon, PanelRight, XIcon } from "lucide-react";
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -250,11 +250,16 @@ function Sidebar({
   );
 }
 
+interface SidebarTriggerProps extends React.ComponentProps<typeof Button> {
+  side?: "left" | "right";
+}
+
 function SidebarTrigger({
   className,
   onClick,
+  side = "left",
   ...props
-}: React.ComponentProps<typeof Button>) {
+}: SidebarTriggerProps) {
   const { toggleSidebar, open } = useSidebar();
 
   return (
@@ -270,10 +275,16 @@ function SidebarTrigger({
       }}
       {...props}
     >
-      {open ? (
-        <PanelLeftIcon className="size-6" />
+      {side === "left" ? (
+        open ? (
+          <PanelLeftIcon className="size-6" />
+        ) : (
+          <PanelRight className="size-6" />
+        )
+      ) : open ? (
+        <XIcon className="size-6" />
       ) : (
-        <PanelRight className="size-6" />
+        <ChevronLeft className="size-6" />
       )}
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
