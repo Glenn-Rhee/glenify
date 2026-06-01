@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { PlusIcon, SearchIcon } from "lucide-react";
+import { PlusIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import DropdownShortLibrary from "./DropdownShortLibrary";
@@ -20,12 +20,12 @@ import ContainerSong from "./ContainerSong";
 import ImageTriggerSong from "./ImageTriggerSong";
 import { usePageShow } from "@/hooks/use-page-show";
 import Link from "next/link";
+import SearchGhost from "./SearchGhost";
 
 export default function LibrarySidebar() {
   usePageShow();
   const pathname = usePathname();
   const { open } = useSidebar();
-  const [openSearch, setOpenSearch] = useState(false);
   const [isplaying, setIsPlaying] = useState(false);
   if (pathname.includes("/auth")) return null;
   return (
@@ -60,23 +60,7 @@ export default function LibrarySidebar() {
         </div>
         {open ? (
           <div className="flex items-center justify-between mt-2">
-            <div className="flex items-center gap-2">
-              <Button
-                onClick={() => setOpenSearch(!openSearch)}
-                variant={"ghost"}
-                size={"icon-sm"}
-                className="relative"
-              >
-                <SearchIcon className="size-6" />
-              </Button>
-              <input
-                className={cn(
-                  "w-56 bg-transparent border-b border-white focus-visible:border-ring focus:ring-0 focus:outline-none placeholder:text-sm transition-all",
-                  openSearch ? "w-56" : "w-0",
-                )}
-                placeholder="Search your library..."
-              />
-            </div>
+            <SearchGhost />
             <DropdownShortLibrary />
           </div>
         ) : null}
@@ -86,7 +70,7 @@ export default function LibrarySidebar() {
         className={cn("overflow-y-auto", open ? "mt-4" : "mt-0")}
       >
         <SidebarGroup>
-          <SidebarMenu className={cn(open ? "gap-y-4" : "gap-y-2")}>
+          <SidebarMenu className={"gap-y-2"}>
             {Array.from({ length: 50 }).map((_, i) => (
               <ContainerSong
                 open={open}
@@ -100,7 +84,7 @@ export default function LibrarySidebar() {
                     isplaying={isplaying}
                     setIsPlaying={setIsPlaying}
                     src={"/dummy-prof.jpg"}
-                    size={60}
+                    size={50}
                   />
                   {open ? (
                     <div>
