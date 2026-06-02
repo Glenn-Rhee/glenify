@@ -14,13 +14,14 @@ interface ContextMenuSongProps {
   children: React.ReactNode;
 }
 
-const ContextMap = {
+export const ContextMap = {
   Item: ContextMenuItem,
   Sub: ContextMenuSub,
   SubTrigger: ContextMenuSubTrigger,
   SubContent: ContextMenuSubContent,
   Group: ContextMenuGroup,
 };
+
 export default function ContextMenuSong(props: ContextMenuSongProps) {
   const { children } = props;
   return (

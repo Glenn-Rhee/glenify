@@ -25,15 +25,18 @@ import {
 } from "./ui/dropdown-menu";
 import Link from "next/link";
 
-interface SongMenuItemsProps {
-  menu: {
-    Item: typeof DropdownMenuItem | typeof ContextMenuItem;
-    Sub: typeof DropdownMenuSub | typeof ContextMenuSub;
-    SubTrigger: typeof DropdownMenuSubTrigger | typeof ContextMenuSubTrigger;
-    SubContent: typeof DropdownMenuSubContent | typeof ContextMenuSubContent;
-    Group: typeof DropdownMenuGroup | typeof ContextMenuGroup;
-  };
+export interface ItemsOverlay {
+  Item: typeof DropdownMenuItem | typeof ContextMenuItem;
+  Sub: typeof DropdownMenuSub | typeof ContextMenuSub;
+  SubTrigger: typeof DropdownMenuSubTrigger | typeof ContextMenuSubTrigger;
+  SubContent: typeof DropdownMenuSubContent | typeof ContextMenuSubContent;
+  Group: typeof DropdownMenuGroup | typeof ContextMenuGroup;
 }
+
+interface SongMenuItemsProps {
+  menu: ItemsOverlay;
+}
+
 export default function SongMenuItems(props: SongMenuItemsProps) {
   const { menu } = props;
   return (
