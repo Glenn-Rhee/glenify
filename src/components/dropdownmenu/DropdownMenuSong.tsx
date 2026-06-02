@@ -29,7 +29,7 @@ export default function DropdownMenuSong() {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="w-64 px-2 py-1.5 rounded-sm! space-y-2"
+        className="w-64"
         onContextMenu={(e) => e.stopPropagation()}
       >
         <SongMenuItems menu={DropdownMap} />

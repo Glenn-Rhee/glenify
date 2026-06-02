@@ -24,7 +24,7 @@ export default function DropdownShortLibrary() {
           <ListIcon className="size-6" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuGroup>
           <DropdownMenuLabel>Short by</DropdownMenuLabel>
           <DropdownMenuItem onClick={() => setShortBy("Recents")}>

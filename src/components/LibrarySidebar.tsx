@@ -18,7 +18,6 @@ import { useState } from "react";
 import ContainerSong from "./ContainerSong";
 import ImageTriggerSong from "./ImageTriggerSong";
 import { usePageShow } from "@/hooks/use-page-show";
-import Link from "next/link";
 import SearchGhost from "./SearchGhost";
 import DropdownShortLibrary from "./dropdownmenu/DropdownShortLibrary";
 import {
@@ -52,9 +51,7 @@ export default function LibrarySidebar() {
               )}
             >
               {open ? (
-                <Link href={"/"} className="text-lg font-bold">
-                  Your Library
-                </Link>
+                <h4 className="text-lg font-bold">Your Library</h4>
               ) : null}
               <div
                 className={cn(
