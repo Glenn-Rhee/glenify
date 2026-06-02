@@ -1,4 +1,4 @@
-import SongMenuItems from "./SongMenuItems";
+import SongMenuItems from "../SongMenuItems";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -8,7 +8,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "./ui/context-menu";
+} from "../ui/context-menu";
 
 interface ContextMenuSongProps {
   children: React.ReactNode;

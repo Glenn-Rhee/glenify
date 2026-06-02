@@ -8,8 +8,8 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import SongMenuItems from "./SongMenuItems";
+} from "../ui/dropdown-menu";
+import SongMenuItems from "../SongMenuItems";
 
 const DropdownMap = {
   Item: DropdownMenuItem,
