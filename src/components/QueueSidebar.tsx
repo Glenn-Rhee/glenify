@@ -20,7 +20,12 @@ export default function QueueSidebar() {
   const [isPlaying, setIsPlaying] = useState(false);
   return (
     <Tabs defaultValue="queue">
-      <Sidebar collapsible="icon" variant="inset" side="right">
+      <Sidebar
+        className="h-[calc(100%-4rem)] mt-18 bg-[#0b0f18] pt-0"
+        collapsible="icon"
+        variant="inset"
+        side="right"
+      >
         <SidebarHeader
           className={cn(
             "flex flex-row justify-between items-center",

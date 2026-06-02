@@ -39,7 +39,11 @@ export default function LibrarySidebar() {
   return (
     <ContextMenu>
       <ContextMenuTrigger>
-        <Sidebar collapsible="icon" variant="inset">
+        <Sidebar
+          className="h-[calc(100%-4rem)] mt-18 bg-[#0b0f18] pt-0"
+          collapsible="icon"
+          variant="inset"
+        >
           <SidebarHeader className={cn("flex flex-col")}>
             <div
               className={cn(
