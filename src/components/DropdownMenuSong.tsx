@@ -28,6 +28,7 @@ export default function DropdownMenuSong() {
       <DropdownMenuContent
         align="end"
         className="w-64 px-2 py-1.5 rounded-sm! space-y-2"
+        onContextMenu={(e) => e.stopPropagation()}
       >
         <SongMenuItems menu={DropdownMap} />
       </DropdownMenuContent>
