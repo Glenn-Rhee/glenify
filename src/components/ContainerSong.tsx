@@ -3,26 +3,31 @@ import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
 interface ContainerSongProps {
-  href: string;
+  href?: string;
   children: React.ReactNode;
   open?: boolean;
+  className?: string;
+  asChild?: boolean;
 }
 
 export default function ContainerSong(props: ContainerSongProps) {
-  const { href, children, open = true } = props;
+  const { href, children, open = true, asChild = false, className } = props;
   const router = useRouter();
   return (
     <div
       onClick={() => {
-        router.push(href);
+        if (href) {
+          router.push(href);
+        }
       }}
       role="button"
       className={cn(
-        "hover:bg-muted cursor-auto px-1.5 py-2 rounded-md",
+        "hover:bg-muted cursor-default px-1.5 py-2 rounded-md",
         open ? "group/item" : "",
+        className,
       )}
     >
-      <div className="z-20">{children}</div>
+      {asChild ? children : <div className="z-20">{children}</div>}
     </div>
   );
 }

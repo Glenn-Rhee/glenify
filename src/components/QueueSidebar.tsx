@@ -24,6 +24,7 @@ import {
 } from "./ui/context-menu";
 import SongMenuItems from "./SongMenuItems";
 import ImageTriggerSong from "./ImageTriggerSong";
+import ContainerSong from "./ContainerSong";
 
 const ContextMap = {
   Item: ContextMenuItem,
@@ -59,7 +60,10 @@ export default function QueueSidebar() {
               <h4 className="font-semibold text-lg">Now Playing</h4>
               <ContextMenu>
                 <ContextMenuTrigger asChild>
-                  <div className="hover:bg-muted flex items-center justify-between px-1.5 py-2 rounded-md mt-2 group/item cursor-default">
+                  <ContainerSong
+                    asChild
+                    className="flex items-center justify-between mt-2"
+                  >
                     <div className="flex items-center gap-x-2">
                       <ImageTriggerSong
                         src="/dummy-prof.jpg"
@@ -81,7 +85,7 @@ export default function QueueSidebar() {
                       </div>
                     </div>
                     <DropdownMenuSong />
-                  </div>
+                  </ContainerSong>
                 </ContextMenuTrigger>
                 <ContextMenuContent className="w-64 px-2 py-1.5 rounded-sm! space-y-2">
                   <SongMenuItems menu={ContextMap} />
@@ -92,9 +96,10 @@ export default function QueueSidebar() {
                 {Array.from({ length: 10 }).map((_, i) => (
                   <ContextMenu key={i}>
                     <ContextMenuTrigger>
-                      <div
+                      <ContainerSong
                         key={i}
-                        className="flex justify-between items-center gap-x-2 mt-2 hover:bg-muted px-1.5 py-2 rounded-md group/item cursor-default"
+                        asChild
+                        className="flex items-center justify-between mt-2"
                       >
                         <div className="flex items-center gap-x-2">
                           <ImageTriggerSong
@@ -117,7 +122,7 @@ export default function QueueSidebar() {
                           </div>
                         </div>
                         <DropdownMenuSong />
-                      </div>
+                      </ContainerSong>
                     </ContextMenuTrigger>
                     <ContextMenuContent className="w-64 px-2 py-1.5 rounded-sm! space-y-2">
                       <SongMenuItems menu={ContextMap} />
