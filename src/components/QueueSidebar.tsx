@@ -10,10 +10,10 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import Link from "next/link";
 import { useState } from "react";
-import DropdownMenuSong from "./DropdownMenuSong";
 import ImageTriggerSong from "./ImageTriggerSong";
 import ContainerSong from "./ContainerSong";
-import ContextMenuSong from "./ContextMenuSong";
+import ContextMenuSong from "./contextmenu/ContextMenuSong";
+import DropdownMenuSong from "./dropdownmenu/DropdownMenuSong";
 
 export default function QueueSidebar() {
   const { open } = useSidebar();
