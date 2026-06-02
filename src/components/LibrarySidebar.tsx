@@ -39,7 +39,7 @@ export default function LibrarySidebar() {
     <ContextMenu>
       <ContextMenuTrigger>
         <Sidebar
-          className="h-[calc(100%-4rem)] mt-18 bg-[#0b0f18] pt-0"
+          className="h-[calc(100%-4rem-6rem)] mt-18 bg-[#0b0f18] pt-0"
           collapsible="icon"
           variant="inset"
         >

@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "./Footer";
 import Header from "./Header";
 import LibrarySidebar from "./LibrarySidebar";
 import QueueSidebar from "./QueueSidebar";
@@ -37,6 +38,8 @@ export default function Providers(props: ProvidersProps) {
             </SidebarProvider>
           </SidebarProvider>
         </div>
+
+        <Footer />
       </div>
     </TooltipProvider>
   );
