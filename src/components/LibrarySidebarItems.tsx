@@ -8,7 +8,7 @@ export default function LibrarySidebarItems(props: LibrarySidebarItemsProps) {
   const { menu } = props;
   return (
     <menu.Item>
-      <Music4Icon /> Create Playlist
+      <Music4Icon className="size-4"/> Create Playlist
     </menu.Item>
   );
 }

@@ -4,19 +4,21 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import SongMenuItems from "../SongMenuItems";
+import SongMenuItems, { ItemsOverlay } from "../SongMenuItems";
 
-const DropdownMap = {
+export const DropdownMap: ItemsOverlay = {
   Item: DropdownMenuItem,
   Sub: DropdownMenuSub,
   SubTrigger: DropdownMenuSubTrigger,
   SubContent: DropdownMenuSubContent,
   Group: DropdownMenuGroup,
+  Separator: DropdownMenuSeparator,
 };
 
 export default function DropdownMenuSong() {

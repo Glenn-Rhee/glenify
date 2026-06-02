@@ -28,6 +28,7 @@ import {
 } from "./ui/context-menu";
 import LibrarySidebarItems from "./LibrarySidebarItems";
 import { ContextMap } from "./contextmenu/ContextMenuSong";
+import ContextMenuLibraryItems from "./contextmenu/ContextMenuLibraryItems";
 
 export default function LibrarySidebar() {
   usePageShow();
@@ -81,28 +82,28 @@ export default function LibrarySidebar() {
             <SidebarGroup>
               <SidebarMenu className={"gap-y-2"}>
                 {Array.from({ length: 50 }).map((_, i) => (
-                  <ContainerSong
-                    open={open}
-                    key={`${pathname}-${i}`}
-                    href="/library/1"
-                  >
-                    <SidebarMenuItem className="flex items-center gap-x-4">
-                      <ImageTriggerSong
-                        open={open}
-                        href={"/library/1"}
-                        isplaying={isplaying}
-                        setIsPlaying={setIsPlaying}
-                        src={"/dummy-prof.jpg"}
-                        size={50}
-                      />
-                      {open ? (
-                        <div>
-                          <h4 className="font-semibold">Taylorrrrrr</h4>
-                          <span className="text-sm">Playlist | Glenn Rhee</span>
-                        </div>
-                      ) : null}
-                    </SidebarMenuItem>
-                  </ContainerSong>
+                  <ContextMenuLibraryItems key={i}>
+                    <ContainerSong key={`${pathname}-${i}`} href="/library/1">
+                      <SidebarMenuItem className="flex items-center gap-x-4">
+                        <ImageTriggerSong
+                          open={open}
+                          href={"/library/1"}
+                          isplaying={isplaying}
+                          setIsPlaying={setIsPlaying}
+                          src={"/dummy-prof.jpg"}
+                          size={50}
+                        />
+                        {open ? (
+                          <div>
+                            <h4 className="font-semibold">Taylorrrrrr</h4>
+                            <span className="text-sm">
+                              Playlist | Glenn Rhee
+                            </span>
+                          </div>
+                        ) : null}
+                      </SidebarMenuItem>
+                    </ContainerSong>
+                  </ContextMenuLibraryItems>
                 ))}
               </SidebarMenu>
             </SidebarGroup>
@@ -110,7 +111,7 @@ export default function LibrarySidebar() {
           <SidebarFooter />
         </Sidebar>
       </ContextMenuTrigger>
-      <ContextMenuContent>
+      <ContextMenuContent className="w-64 px-2 py-1.5 rounded-sm! space-y-2">
         <LibrarySidebarItems menu={ContextMap} />
       </ContextMenuContent>
     </ContextMenu>

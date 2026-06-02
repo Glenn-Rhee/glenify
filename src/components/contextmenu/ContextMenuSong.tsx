@@ -1,9 +1,10 @@
-import SongMenuItems from "../SongMenuItems";
+import SongMenuItems, { ItemsOverlay } from "../SongMenuItems";
 import {
   ContextMenu,
   ContextMenuContent,
   ContextMenuGroup,
   ContextMenuItem,
+  ContextMenuSeparator,
   ContextMenuSub,
   ContextMenuSubContent,
   ContextMenuSubTrigger,
@@ -14,12 +15,13 @@ interface ContextMenuSongProps {
   children: React.ReactNode;
 }
 
-export const ContextMap = {
+export const ContextMap: ItemsOverlay = {
   Item: ContextMenuItem,
   Sub: ContextMenuSub,
   SubTrigger: ContextMenuSubTrigger,
   SubContent: ContextMenuSubContent,
   Group: ContextMenuGroup,
+  Separator: ContextMenuSeparator,
 };
 
 export default function ContextMenuSong(props: ContextMenuSongProps) {
