@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import LibrarySidebar from "./LibrarySidebar";
 import QueueSidebar from "./QueueSidebar";
-import { SidebarProvider } from "./ui/sidebar";
+import { SidebarInset, SidebarProvider } from "./ui/sidebar";
 import { TooltipProvider } from "./ui/tooltip";
 
 interface ProvidersProps {
@@ -19,6 +19,7 @@ export default function Providers(props: ProvidersProps) {
 
         <div className="flex flex-1 overflow-hidden">
           <SidebarProvider
+            className="rounded-2xl overflow-hidden bg-transparent"
             style={
               {
                 "--sidebar-width": "calc(var(--spacing) * 85)",
@@ -27,13 +28,14 @@ export default function Providers(props: ProvidersProps) {
           >
             <LibrarySidebar />
             <SidebarProvider
+              className="overflow-hidden bg-transparent"
               style={
                 {
                   "--sidebar-width": "calc(var(--spacing) * 85)",
                 } as React.CSSProperties
               }
             >
-              {children}
+              <SidebarInset>{children}</SidebarInset>
               <QueueSidebar />
             </SidebarProvider>
           </SidebarProvider>

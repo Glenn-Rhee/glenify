@@ -1,5 +1,3 @@
 export default function HomePage() {
-  return (
-    <div>cihuy</div>
-  )
-};
+  return <div className="">s</div>;
+}
