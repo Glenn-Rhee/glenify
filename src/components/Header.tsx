@@ -36,7 +36,7 @@ export default function Header() {
             placeholder="What do you want to play?"
             onFocus={() => setIsSearchFocus(true)}
             onBlur={() => setIsSearchFocus(false)}
-            className="w-124 bg-transparent focus-visible:border-ring focus:outline-none placeholder:text-sm transition-all"
+            className="w-124 bg-transparent placeholder:font-medium focus-visible:border-ring focus:outline-none placeholder:text-sm transition-all"
           />
         </div>
       </div>
