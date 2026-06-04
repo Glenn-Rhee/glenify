@@ -13,6 +13,7 @@ import Image from "next/image";
 import { Progress } from "./ui/progress";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Footer() {
   const router = useRouter();
@@ -27,6 +28,14 @@ export default function Footer() {
           height={55}
           className="aspect-square object-cover rounded-md"
         />
+        <div className="flex flex-col gap-y-0.5">
+          <Link href={"/album/1"} className= "font-semibold hover:underline">
+            loml
+          </Link>
+          <Link href={"/artist/1"} className="text-sm hover:underline">
+            Taylor Swift
+          </Link>
+        </div>
       </div>
 
       <div className="flex flex-col justify-end pb-2 h-full gap-y-2">
