@@ -4,13 +4,20 @@ import { PlayIcon } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function AlbumList() {
+interface AlbumListProps {
+  expanded?: boolean;
+}
+
+export default function AlbumList(props: AlbumListProps) {
+  const { expanded } = props;
   const router = useRouter();
 
   return (
     <ContextMenuAlbum>
       <div className="grid grid-cols-8 gap-4 mt-2 px-1.5">
-        {Array.from({ length: 16 }).map((_, i) => (
+        {Array.from({
+          length: typeof expanded === "undefined" ? 32 : expanded ? 32 : 16,
+        }).map((_, i) => (
           <div
             onClick={() => router.push("/album/1")}
             role="button"
