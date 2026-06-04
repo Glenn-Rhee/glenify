@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AllTabs from "./AllTabs";
 import SongList from "./SongList";
+import AlbumList from "./AlbumList";
 
 export default function TabsHome() {
   return (
@@ -37,7 +38,9 @@ export default function TabsHome() {
       <TabsContent value="song">
         <SongList />
       </TabsContent>
-      <TabsContent value="album">album ni cuy</TabsContent>
+      <TabsContent value="album">
+        <AlbumList />
+      </TabsContent>
       <TabsContent value="artist">artist ni cuy</TabsContent>
     </Tabs>
   );
