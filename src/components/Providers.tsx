@@ -16,7 +16,6 @@ export default function Providers(props: ProvidersProps) {
     <TooltipProvider>
       <div className="flex flex-col h-screen">
         <Header />
-
         <div className="flex flex-1 overflow-hidden">
           <SidebarProvider
             className="rounded-2xl overflow-hidden bg-transparent"
@@ -27,20 +26,21 @@ export default function Providers(props: ProvidersProps) {
             }
           >
             <LibrarySidebar />
-            <SidebarProvider
-              className="overflow-hidden bg-transparent"
-              style={
-                {
-                  "--sidebar-width": "calc(var(--spacing) * 85)",
-                } as React.CSSProperties
-              }
-            >
-              <SidebarInset>{children}</SidebarInset>
-              <QueueSidebar />
-            </SidebarProvider>
+            <SidebarInset className="flex-1 overflow-hidden p-0">
+              <SidebarProvider
+                className="overflow-hidden bg-transparent min-w-0"
+                style={
+                  {
+                    "--sidebar-width": "calc(var(--spacing) * 85)",
+                  } as React.CSSProperties
+                }
+              >
+                {children}
+                <QueueSidebar />
+              </SidebarProvider>
+            </SidebarInset>
           </SidebarProvider>
         </div>
-
         <Footer />
       </div>
     </TooltipProvider>

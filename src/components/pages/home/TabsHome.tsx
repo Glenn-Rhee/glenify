@@ -30,7 +30,7 @@ export default function TabsHome() {
           Artist
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="all">
+      <TabsContent value="all" className="overflow-hidden">
         <AllTabs />
       </TabsContent>
       <TabsContent value="song">Song ni cuy</TabsContent>

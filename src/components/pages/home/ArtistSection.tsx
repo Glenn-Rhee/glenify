@@ -1,14 +1,23 @@
+"use client";
 import ContextMenuArtist from "@/components/contextmenu/ContextMenuArtist";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ArtistSection() {
+  const [expanded, setExpanded] = useState<boolean>(false);
   return (
     <section>
       <h4 className="font-bold text-3xl">Artist</h4>
       <ContextMenuArtist>
-        <div className="flex items-center gap-x-4 mt-2 px-1.5">
-          {Array.from({ length: 20 }).map((_, i) => (
+        <div
+          className={cn("grid grid-cols-8 gap-4 mt-2 px-1.5", {
+            "flex-wrap": expanded,
+            "flex-nowrap": !expanded,
+          })}
+        >
+          {Array.from({ length: expanded ? 18 : 8 }).map((_, i) => (
             <Link
               key={i}
               href={"/artist/1"}
@@ -17,8 +26,8 @@ export default function ArtistSection() {
               <Image
                 src={"/dummy-prof.jpg"}
                 alt="Profile pict Artiist"
-                width={100}
-                height={100}
+                width={110}
+                height={110}
                 className="aspect-square object-cover rounded-full"
               />
               <span className="font-semibold text-center text-xl truncate w-full">
@@ -28,6 +37,16 @@ export default function ArtistSection() {
           ))}
         </div>
       </ContextMenuArtist>
+      <div className="flex items-center justify-end mt-4">
+        <button
+          className="cursor-pointer hover:text-white text-gray-300"
+          onClick={() => {
+            setExpanded(!expanded);
+          }}
+        >
+          Show {expanded ? "less" : "more"}
+        </button>
+      </div>
     </section>
   );
 }
