@@ -3,7 +3,6 @@ import {
   ListMusicIcon,
   MinusCircle,
   PlusCircleIcon,
-  PlusIcon,
   UserKeyIcon,
 } from "lucide-react";
 import {
@@ -42,14 +41,7 @@ export default function SongMenuItems(props: SongMenuItemsProps) {
   const { menu } = props;
   return (
     <>
-      <menu.Sub>
-        <menu.SubTrigger>
-          <PlusIcon className="size-4" /> Add to playlist
-        </menu.SubTrigger>
-        <menu.SubContent className="w-64 me-2 px-2 mb-1 py-1.5 rounded-sm! space-y-2">
-          <ItemOverlayPlaylist menu={menu} />
-        </menu.SubContent>
-      </menu.Sub>
+      <ItemOverlayPlaylist menu={menu} />
       <menu.Item>
         <MinusCircle className="size-4" /> Remove From This Playlist
       </menu.Item>
