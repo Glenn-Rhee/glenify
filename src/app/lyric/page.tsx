@@ -76,7 +76,7 @@ export default function LyricPage() {
         {lyrics.map((lyric, i) => (
           <span
             key={typeof lyric === "string" ? lyric + i : i}
-            className="font-semibold text-5xl cursor-pointer hover:underline"
+            className="font-semibold text-5xl text-white/80 hover:text-white/90 cursor-pointer hover:underline"
           >
             {lyric}
           </span>
