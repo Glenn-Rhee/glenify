@@ -29,7 +29,7 @@ export default function Footer() {
           className="aspect-square object-cover rounded-md"
         />
         <div className="flex flex-col gap-y-0.5">
-          <Link href={"/album/1"} className= "font-semibold hover:underline">
+          <Link href={"/album/1"} className="font-semibold hover:underline">
             loml
           </Link>
           <Link href={"/artist/1"} className="text-sm hover:underline">
