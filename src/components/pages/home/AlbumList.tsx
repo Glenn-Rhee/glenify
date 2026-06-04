@@ -22,7 +22,7 @@ export default function AlbumList(props: AlbumListProps) {
             onClick={() => router.push("/album/1")}
             role="button"
             key={i}
-            className="flex flex-col items-center w-full max-w-32 gap-y-1 group/album hover:bg-white/10 transition-colors py-1.5 px-2 rounded-md cursor-pointer"
+            className="flex flex-col items-center justify-self-center w-full max-w-32 gap-y-1 group/album hover:bg-white/10 transition-colors py-1.5 px-2 rounded-md cursor-pointer"
           >
             <div className="relative w-full">
               <Image

@@ -11,14 +11,14 @@ export default function ArtistList(props: ArtistListProps) {
   const { expanded } = props;
   return (
     <ContextMenuArtist>
-      <div className={cn("grid grid-cols-8 gap-4 mt-2 px-1.5")}>
+      <div className={cn("grid grid-cols-8 gap-4 mt-2 px-1.5 justify-center")}>
         {Array.from({
           length: typeof expanded === "undefined" ? 18 : expanded ? 18 : 8,
         }).map((_, i) => (
           <Link
             key={i}
             href={"/artist/1"}
-            className="flex flex-col items-center w-full max-w-32 gap-y-1 hover:bg-white/10 transition-colors py-1.5 rounded-md"
+            className="flex flex-col justify-self-center items-center justify-center w-full max-w-32 gap-y-1 hover:bg-white/10 transition-colors py-1.5 rounded-md"
           >
             <Image
               src={"/dummy-prof.jpg"}
