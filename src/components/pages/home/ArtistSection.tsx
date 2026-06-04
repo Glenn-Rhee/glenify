@@ -11,12 +11,7 @@ export default function ArtistSection() {
     <section>
       <h4 className="font-bold text-3xl">Artist</h4>
       <ContextMenuArtist>
-        <div
-          className={cn("grid grid-cols-8 gap-4 mt-2 px-1.5", {
-            "flex-wrap": expanded,
-            "flex-nowrap": !expanded,
-          })}
-        >
+        <div className={cn("grid grid-cols-8 gap-4 mt-2 px-1.5")}>
           {Array.from({ length: expanded ? 18 : 8 }).map((_, i) => (
             <Link
               key={i}
