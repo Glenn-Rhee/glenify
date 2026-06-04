@@ -7,7 +7,7 @@ import ArtistList from "./ArtistList";
 export default function TabsHome() {
   return (
     <Tabs defaultValue="all">
-      <TabsList className="bg-transparent gap-x-4 mb-2">
+      <TabsList className="bg-background max-w-72 w-full gap-x-4 mb-2 sticky top-2 left-0 right-0 z-80">
         <TabsTrigger
           value="all"
           className="dark:data-active:bg-white/90 dark:data-active:text-background dark:data-active:hover:text-background px-3"
