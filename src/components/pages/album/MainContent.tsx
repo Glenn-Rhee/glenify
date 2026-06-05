@@ -19,6 +19,7 @@ export default function MainContent() {
           <MoreVertical className="size-6" />
         </DropdownmenuAlbum>
       </div>
+      
     </Container>
   );
 }
