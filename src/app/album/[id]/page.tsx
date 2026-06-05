@@ -1,4 +1,5 @@
 import BannerAlbum from "@/components/pages/album/BannerAlbum";
+import MainContent from "@/components/pages/album/MainContent";
 
 export default function AlbumPageId() {
   return (
@@ -7,6 +8,7 @@ export default function AlbumPageId() {
       className="w-full relative overflow-x-hidden overflow-y-auto no-scrollbar"
     >
       <BannerAlbum />
+      <MainContent />
     </div>
   );
 }
