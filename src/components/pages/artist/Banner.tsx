@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PlayIcon } from "lucide-react";
 import { useEffect, useRef } from "react";
+import BannerContainer from "../../BannerContainer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,7 +53,7 @@ export default function Banner() {
         </button>
         <h2 className="font-bold text-2xl">Taylor Swift</h2>
       </header>
-      <header ref={triggerRef} className="bg-orange-900/80 w-full h-[45dvh]">
+      <BannerContainer ref={triggerRef}>
         <Container
           className="w-full flex flex-col bg-fixed justify-end pb-5 h-full gap-y-4 bg-center bg-cover"
           style={{ backgroundImage: "url('/dummy-prof.jpg')" }}
@@ -64,7 +65,7 @@ export default function Banner() {
             100.000.000 monthly listened
           </span>
         </Container>
-      </header>
+      </BannerContainer>
     </>
   );
 }
