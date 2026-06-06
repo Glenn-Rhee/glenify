@@ -3,6 +3,7 @@ import AllTabs from "./AllTabs";
 import SongList from "./SongList";
 import AlbumList from "./AlbumList";
 import ArtistList from "./ArtistList";
+import RecentlyPlayed from "./RecentlyPlayed";
 
 export default function TabsHome() {
   return (
@@ -34,6 +35,7 @@ export default function TabsHome() {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="all" className="overflow-hidden">
+        <RecentlyPlayed />
         <AllTabs />
       </TabsContent>
       <TabsContent value="song">
