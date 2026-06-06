@@ -1,8 +1,10 @@
+import ContextMenuArtist from "@/components/contextmenu/ContextMenuArtist";
 import DropdownMenuSong from "@/components/dropdownmenu/DropdownMenuSong";
 import { getFormatDurationSong } from "@/helper/getFormatDuration";
 import ColumnTableValidation from "@/validation/column-table-validation";
 import { ColumnDef } from "@tanstack/react-table";
 import { MoreVertical, PlusCircleIcon } from "lucide-react";
+import Link from "next/link";
 import z from "zod";
 
 export const columnsSong: ColumnDef<
@@ -22,7 +24,11 @@ export const columnsSong: ColumnDef<
     cell: ({ row }) => (
       <div className="flex flex-col gap-y-1">
         <h6 className="font-medium">{row.original.DataSong.Title}</h6>
-        <span className="text-xs">{row.original.DataSong.Artist}</span>
+        <ContextMenuArtist>
+          <Link href={"/artist/1"} className="text-xs hover:underline">
+            {row.original.DataSong.Artist}
+          </Link>
+        </ContextMenuArtist>
       </div>
     ),
   },
