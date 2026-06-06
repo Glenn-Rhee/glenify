@@ -18,6 +18,7 @@ import DropdownMenuSong from "./dropdownmenu/DropdownMenuSong";
 export default function QueueSidebar() {
   const { open } = useSidebar();
   const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <Tabs defaultValue="queue">
       <Sidebar

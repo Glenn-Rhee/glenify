@@ -3,8 +3,8 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import LibrarySidebar from "./LibrarySidebar";
-import QueueSidebar from "./QueueSidebar";
-import { SidebarInset, SidebarProvider } from "./ui/sidebar";
+import QueueProvider from "./QueueProvider";
+import { SidebarProvider } from "./ui/sidebar";
 import { TooltipProvider } from "./ui/tooltip";
 
 interface ProvidersProps {
@@ -26,19 +26,7 @@ export default function Providers(props: ProvidersProps) {
             }
           >
             <LibrarySidebar />
-            <SidebarInset className="flex-1 overflow-hidden p-0">
-              <SidebarProvider
-                className="overflow-hidden bg-transparent min-w-0"
-                style={
-                  {
-                    "--sidebar-width": "calc(var(--spacing) * 85)",
-                  } as React.CSSProperties
-                }
-              >
-                {children}
-                <QueueSidebar />
-              </SidebarProvider>
-            </SidebarInset>
+            <QueueProvider>{children}</QueueProvider>
           </SidebarProvider>
         </div>
         <Footer />
