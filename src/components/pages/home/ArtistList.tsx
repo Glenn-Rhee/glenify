@@ -11,9 +11,9 @@ export default function ArtistList(props: ArtistListProps) {
   const { expanded } = props;
   return (
     <ContextMenuArtist>
-      <div className={cn("grid grid-cols-8 gap-4 mt-2 px-1.5 justify-center")}>
+      <div className={cn("grid grid-cols-6 gap-4 mt-2 px-1.5 justify-center")}>
         {Array.from({
-          length: typeof expanded === "undefined" ? 18 : expanded ? 18 : 8,
+          length: typeof expanded === "undefined" ? 18 : expanded ? 18 : 6,
         }).map((_, i) => (
           <Link
             key={i}

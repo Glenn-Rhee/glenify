@@ -14,9 +14,9 @@ export default function AlbumList(props: AlbumListProps) {
 
   return (
     <ContextMenuAlbum>
-      <div className="grid grid-cols-8 gap-4 mt-2 px-1.5">
+      <div className="grid grid-cols-6 gap-4 mt-2 px-1.5">
         {Array.from({
-          length: typeof expanded === "undefined" ? 32 : expanded ? 32 : 16,
+          length: typeof expanded === "undefined" ? 36 : expanded ? 36 : 6,
         }).map((_, i) => (
           <div
             onClick={() => router.push("/album/1")}
@@ -28,8 +28,8 @@ export default function AlbumList(props: AlbumListProps) {
               <Image
                 src={"/dummy-prof.jpg"}
                 alt="Album profile"
-                width={110}
-                height={110}
+                width={200}
+                height={200}
                 className="aspect-square object-cover rounded-md w-full"
               />
               <button
@@ -43,8 +43,8 @@ export default function AlbumList(props: AlbumListProps) {
               </button>
             </div>
             <div className="flex flex-col w-full gap-y-1">
-              <h6 className="font-semibold">Lover</h6>
-              <span>Taylor Swift</span>
+              <h6 className="font-semibold truncate">Lover</h6>
+              <span className="truncate">Taylor Swift</span>
             </div>
           </div>
         ))}
