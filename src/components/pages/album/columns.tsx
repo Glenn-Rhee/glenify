@@ -1,3 +1,4 @@
+import DropdownMenuSong from "@/components/dropdownmenu/DropdownMenuSong";
 import { getFormatDurationSong } from "@/helper/getFormatDuration";
 import ColumnTableValidation from "@/validation/column-table-validation";
 import { ColumnDef } from "@tanstack/react-table";
@@ -38,16 +39,18 @@ export const columnsSong: ColumnDef<
     accessorKey: "Duration",
     header: "Duration",
     cell: ({ row }) => (
-      <div className="flex items-center gap-x-2">
-        <button className="size-8 rounded-full flex items-center justify-center">
+      <div className="flex items-center gap-x-2 text-white">
+        <button className="cursor-pointer">
           <PlusCircleIcon className="size-5" />
         </button>
         <span className="text-sm">
           {getFormatDurationSong(row.original.Duration)}
         </span>
-        <button>
-          <MoreVertical className="size-5" />
-        </button>
+        <DropdownMenuSong asChild>
+          <button className="cursor-pointer">
+            <MoreVertical className="size-5" />
+          </button>
+        </DropdownMenuSong>
       </div>
     ),
   },
