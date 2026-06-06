@@ -1,8 +1,10 @@
+import { getFormatDurationSong } from "@/helper/getFormatDuration";
 import ColumnTableValidation from "@/validation/column-table-validation";
 import { ColumnDef } from "@tanstack/react-table";
+import { MoreVertical, PlusCircleIcon } from "lucide-react";
 import z from "zod";
 
-export const columnsAlbum: ColumnDef<
+export const columnsSong: ColumnDef<
   z.infer<typeof ColumnTableValidation.SCHEMASONGS>
 >[] = [
   {
@@ -35,6 +37,18 @@ export const columnsAlbum: ColumnDef<
   {
     accessorKey: "Duration",
     header: "Duration",
-    
-  }
+    cell: ({ row }) => (
+      <div className="flex items-center gap-x-2">
+        <button className="size-8 rounded-full flex items-center justify-center">
+          <PlusCircleIcon className="size-5" />
+        </button>
+        <span className="text-sm">
+          {getFormatDurationSong(row.original.Duration)}
+        </span>
+        <button>
+          <MoreVertical className="size-5" />
+        </button>
+      </div>
+    ),
+  },
 ];

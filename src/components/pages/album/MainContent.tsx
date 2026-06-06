@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import DropdownmenuAlbum from "@/components/dropdownmenu/DropdownmenuAlbum";
 import { MoreVertical, PlayIcon, PlusCircle, ShuffleIcon } from "lucide-react";
+import DataTableSong from "./DataTableSong";
 
 export default function MainContent() {
   return (
@@ -19,7 +20,7 @@ export default function MainContent() {
           <MoreVertical className="size-6" />
         </DropdownmenuAlbum>
       </div>
-      
+      <DataTableSong />
     </Container>
   );
 }
