@@ -16,6 +16,7 @@ import {
 } from "@tanstack/react-table";
 import z from "zod";
 import { columnsSong } from "./columns";
+import ContextMenuSong from "@/components/contextmenu/ContextMenuSong";
 
 const songs: z.infer<typeof ColumnTableValidation.SCHEMASONGS>[] = [
   {
@@ -142,8 +143,15 @@ export default function DataTableSong() {
           table.getRowModel().rows.map((row) => (
             <TableRow key={row.id}>
               {row.getVisibleCells().map((cell) => (
-                <TableCell className="py-1" key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                <TableCell key={cell.id} className="py-1 h-full">
+                  <ContextMenuSong key={row.id}>
+                    <div className="h-full">
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
+                    </div>
+                  </ContextMenuSong>
                 </TableCell>
               ))}
             </TableRow>
