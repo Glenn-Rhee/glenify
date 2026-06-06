@@ -25,17 +25,17 @@ export default function ItemOverlayPlaylist(props: ItemOverlayPlaylistProps) {
         </menu.Item>
         <menu.Group>
           <menu.Item>
-            <Link href="/library/1" className="w-full">
+            <Link href="/playlist/1" className="w-full">
               Lets Sing With Tay
             </Link>
           </menu.Item>
           <menu.Item>
-            <Link href="/library/1" className="w-full">
+            <Link href="/playlist/1" className="w-full">
               Cihuy 123
             </Link>
           </menu.Item>
           <menu.Item>
-            <Link href="/library/1" className="w-full">
+            <Link href="/playlist/1" className="w-full">
               Cihuy 456
             </Link>
           </menu.Item>{" "}

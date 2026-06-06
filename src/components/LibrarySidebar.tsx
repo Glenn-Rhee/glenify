@@ -84,11 +84,11 @@ export default function LibrarySidebar() {
               <SidebarMenu className={"gap-y-2"}>
                 {Array.from({ length: 50 }).map((_, i) => (
                   <ContextMenuLibraryItems key={i}>
-                    <ContainerSong key={`${pathname}-${i}`} href="/library/1">
+                    <ContainerSong key={`${pathname}-${i}`} href="/playlist/1">
                       <SidebarMenuItem className="flex items-center gap-x-4">
                         <ImageTriggerSong
                           open={open}
-                          href={"/library/1"}
+                          href={"/playlist/1"}
                           isplaying={isplaying}
                           setIsPlaying={setIsPlaying}
                           src={"/dummy-prof.jpg"}

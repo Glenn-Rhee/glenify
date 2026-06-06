@@ -1,7 +1,7 @@
 "use client";
 import { House, SearchIcon } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import DropdownmenuProfile from "./dropdownmenu/DropdownmenuProfile";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 export default function Header() {
   const [isSearchFocus, setIsSearchFocus] = useState<boolean>(false);
   const pathname = usePathname();
+  const router = useRouter();
   return (
     <header className="h-18 sticky top-0 left-0 right-0 z-50 shrink-0 px-10 flex items-center justify-between bg-[#0b0f18]">
       <Link href={"/"} className="font-bold text-2xl">
@@ -36,6 +37,11 @@ export default function Header() {
             placeholder="What do you want to play?"
             onFocus={() => setIsSearchFocus(true)}
             onBlur={() => setIsSearchFocus(false)}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                router.push("/search?query=cihuy");
+              }
+            }}
             className="w-124 bg-transparent placeholder:font-medium focus-visible:border-ring focus:outline-none placeholder:text-sm transition-all"
           />
         </div>

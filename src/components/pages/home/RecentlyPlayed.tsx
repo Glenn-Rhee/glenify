@@ -10,7 +10,7 @@ export default function RecentlyPlayed() {
       {Array.from({ length: 8 }).map((_, i) => (
         <div
           onClick={() => {
-            router.push("/library/1");
+            router.push("/playlist/1");
           }}
           role="button"
           key={i}
