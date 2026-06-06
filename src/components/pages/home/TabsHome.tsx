@@ -39,12 +39,15 @@ export default function TabsHome() {
         <AllTabs />
       </TabsContent>
       <TabsContent value="song">
+        <RecentlyPlayed />
         <SongList />
       </TabsContent>
       <TabsContent value="album">
+        <RecentlyPlayed />
         <AlbumList />
       </TabsContent>
       <TabsContent value="artist">
+        <RecentlyPlayed />
         <ArtistList />
       </TabsContent>
     </Tabs>
