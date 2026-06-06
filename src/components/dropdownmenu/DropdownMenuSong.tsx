@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import SongMenuItems, { ItemsOverlay } from "../SongMenuItems";
+import { cn } from "@/lib/utils";
 
 export const DropdownMap: ItemsOverlay = {
   Item: DropdownMenuItem,
@@ -21,11 +22,26 @@ export const DropdownMap: ItemsOverlay = {
   Separator: DropdownMenuSeparator,
 };
 
-export default function DropdownMenuSong() {
+interface DropdownMenuSongProps {
+  asChild?: boolean;
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export default function DropdownMenuSong(props: DropdownMenuSongProps) {
+  const { asChild = false, className, children } = props;
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="group-hover/item:opacity-100 opacity-0 cursor-pointer">
-        <MoreVertical className="size-6" />
+      <DropdownMenuTrigger
+        asChild={asChild}
+        className={cn(
+          asChild
+            ? className
+            : "group-hover/item:opacity-100 opacity-0 cursor-pointer",
+          className,
+        )}
+      >
+        {asChild ? children : <MoreVertical className="size-6" />}
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
