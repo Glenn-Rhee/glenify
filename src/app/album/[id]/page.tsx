@@ -7,7 +7,7 @@ export default function AlbumPageId() {
       id="album-page"
       className="w-full relative overflow-x-hidden overflow-y-auto no-scrollbar"
     >
-      <BannerAlbum />
+      <BannerAlbum elementId="album-page" />
       <MainContent />
     </div>
   );

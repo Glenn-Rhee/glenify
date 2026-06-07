@@ -7,7 +7,7 @@ export default function ArtistPage() {
       id="artist-page"
       className="w-full relative overflow-x-hidden overflow-y-auto no-scrollbar"
     >
-      <Banner />
+      <Banner elementId="artist-page" />
       <MainContent />
     </div>
   );
