@@ -71,7 +71,7 @@ export default function LibrarySidebar() {
             </div>
             {open ? (
               <div className="flex items-center justify-between mt-2">
-                <SearchGhost />
+                <SearchGhost placeholder="Find your library" />
                 <DropdownShortLibrary />
               </div>
             ) : null}
