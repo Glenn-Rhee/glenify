@@ -45,7 +45,7 @@ export const columnsSong: ColumnDef<
     accessorKey: "Duration",
     header: "Duration",
     cell: ({ row }) => (
-      <div className="flex items-center gap-x-2 text-white">
+      <div className="flex items-center gap-x-3 text-white">
         <button className="cursor-pointer">
           <PlusCircleIcon className="size-5" />
         </button>
