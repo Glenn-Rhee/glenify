@@ -15,6 +15,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useSidebarStore } from "@/store/sidebar-store";
+import ContextMenuSong from "./contextmenu/ContextMenuSong";
+import ContextMenuArtist from "./contextmenu/ContextMenuArtist";
 
 export default function Footer() {
   const router = useRouter();
@@ -23,20 +25,26 @@ export default function Footer() {
   return (
     <footer className="h-24 sticky z-50 shrink-0 px-10 grid grid-cols-[18rem_1fr_18rem] justify-center bg-[#0b0f18]">
       <div className="flex items-center gap-x-4">
-        <Image
-          src={"/dummy-prof.jpg"}
-          alt="Currently Playing"
-          width={55}
-          height={55}
-          className="aspect-square object-cover rounded-md"
-        />
+        <ContextMenuSong>
+          <Image
+            src={"/dummy-prof.jpg"}
+            alt="Currently Playing"
+            width={55}
+            height={55}
+            className="aspect-square object-cover rounded-md"
+          />
+        </ContextMenuSong>
         <div className="flex flex-col gap-y-0.5">
-          <Link href={"/album/1"} className="font-semibold hover:underline">
-            loml
-          </Link>
-          <Link href={"/artist/1"} className="text-sm hover:underline">
-            Taylor Swift
-          </Link>
+          <ContextMenuSong>
+            <Link href={"/album/1"} className="font-semibold hover:underline">
+              loml
+            </Link>
+          </ContextMenuSong>
+          <ContextMenuArtist>
+            <Link href={"/artist/1"} className="text-sm hover:underline">
+              Taylor Swift
+            </Link>
+          </ContextMenuArtist>
         </div>
       </div>
 
