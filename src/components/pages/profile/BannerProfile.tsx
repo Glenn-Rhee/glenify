@@ -1,5 +1,6 @@
 "use client";
 import BannerContainer from "@/components/BannerContainer";
+import ContextMenuProfile from "@/components/contextmenu/ContextMenuProfile";
 import HeaderBanner from "@/components/HeaderBanner";
 import { Pencil } from "lucide-react";
 import Image from "next/image";
@@ -33,9 +34,11 @@ export default function BannerProfile() {
         </button>
         <div className="flex flex-col gap-y-1.5">
           <span>Profile</span>
-          <button>
-            <h1 className="font-bold text-7xl">Glenn</h1>
-          </button>
+          <ContextMenuProfile>
+            <button>
+              <h1 className="font-bold text-7xl">Glenn</h1>
+            </button>
+          </ContextMenuProfile>
           <span className="font-medium text-lg">10 Public Playlist</span>
         </div>
       </BannerContainer>
