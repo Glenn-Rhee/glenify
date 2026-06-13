@@ -5,6 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-poppins: var(--font-poppins);
+
   --font-heading: var(--font-poppins);
   --font-poppins: var(--font-poppins);
   --color-sidebar-ring: var(--sidebar-ring);
