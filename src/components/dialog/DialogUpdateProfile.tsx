@@ -15,7 +15,10 @@ export default function DialogUpdateProfile(props: DialogUpdateProfileProps) {
     <Dialog>
       <form>
         <DialogTrigger asChild>{children}</DialogTrigger>
-        <DialogContent className="max-w-lg">
+        <DialogContent
+          className="max-w-lg"
+          onContextMenu={(e) => e.stopPropagation()}
+        >
           <DialogHeader>
             <DialogTitle className="text-lg font-medium">
               Profile Details
