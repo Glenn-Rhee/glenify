@@ -21,6 +21,7 @@ export default function BannerProfile() {
         ref={triggerRef}
         className="h-[30dvh] bg-orange-800 flex px-3 py-2 gap-x-8 items-end"
       >
+        <DialogUpdateProfile></DialogUpdateProfile>
         <button className="relative cursor-pointer group/profile">
           <Image
             src={"/dummy-prof.jpg"}
