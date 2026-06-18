@@ -4,7 +4,7 @@ import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "Glenify Music Platform",
-  description: "Gleni",
+  description: "Glen",
 };
 
 export default function RootLayout({
