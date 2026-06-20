@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import DropdownmenuMoreOptProfile from "@/components/dropdownmenu/DropdownmenuMoreOptProfile";
 import { MoreHorizontal } from "lucide-react";
 import SectionArtist from "./SectionArtist";
+import SectionPlaylist from "./SectionPlaylist";
 
 export default function MainProfile() {
   return (
@@ -10,6 +11,7 @@ export default function MainProfile() {
         <MoreHorizontal className="size-6" />
       </DropdownmenuMoreOptProfile>
       <SectionArtist />
+      <SectionPlaylist />
     </Container>
   );
 }
