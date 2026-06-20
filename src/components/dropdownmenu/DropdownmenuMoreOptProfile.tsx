@@ -16,7 +16,7 @@ export default function DropdownmenuMoreOptProfile(props: Props) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>{children}</DropdownMenuTrigger>
+      <DropdownMenuTrigger className="mt-4">{children}</DropdownMenuTrigger>
       <DropdownMenuContent className="w-64">
         <ProfileMenuItems menu={DropdownMap} isForOption />
       </DropdownMenuContent>

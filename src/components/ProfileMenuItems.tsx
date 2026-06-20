@@ -12,7 +12,7 @@ export default function ProfileMenuItems(props: ProfileMenuItems) {
   return (
     <>
       {isForOption ? (
-        <menu.Item>
+        <menu.Item onClick={(e) => e.preventDefault()}>
           <DialogUpdateProfile>
             <button className="flex items-center gap-x-3">
               <PencilIcon className="size-4" /> Edit Profile

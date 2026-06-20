@@ -18,6 +18,7 @@ export default function DialogUpdateProfile(props: DialogUpdateProfileProps) {
         <DialogContent
           className="max-w-lg"
           onContextMenu={(e) => e.stopPropagation()}
+          aria-describedby="Update profile user content"
         >
           <DialogHeader>
             <DialogTitle className="text-lg font-medium">
@@ -38,6 +39,7 @@ export default function DialogUpdateProfile(props: DialogUpdateProfileProps) {
             </div>
             <div className="flex flex-col gap-y-4 items-end">
               <input
+                onKeyDown={(e) => e.stopPropagation()}
                 placeholder="Your Name"
                 className="w-full placeholder:text-white/60 text-lg rounded-md py-2 px-3 text-white font-semibold bg-gray-500/80 placeholder:font-medium focus-visible:border-ring focus:outline-none placeholder:text-lg transition-all"
               />
