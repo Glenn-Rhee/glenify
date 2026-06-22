@@ -13,6 +13,7 @@ import {
 
 interface ContextMenuSongProps {
   children: React.ReactNode;
+  isForPlaylist?: boolean;
 }
 
 export const ContextMap: ItemsOverlay = {
@@ -25,12 +26,12 @@ export const ContextMap: ItemsOverlay = {
 };
 
 export default function ContextMenuSong(props: ContextMenuSongProps) {
-  const { children } = props;
+  const { children, isForPlaylist = false } = props;
   return (
     <ContextMenu>
       <ContextMenuTrigger>{children}</ContextMenuTrigger>
       <ContextMenuContent className="w-64 px-2 py-1.5 rounded-sm! space-y-2">
-        <SongMenuItems menu={ContextMap} />
+        <SongMenuItems menu={ContextMap} isForPlaylist={isForPlaylist} />
       </ContextMenuContent>
     </ContextMenu>
   );
