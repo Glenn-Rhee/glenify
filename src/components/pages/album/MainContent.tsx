@@ -4,6 +4,7 @@ import { MoreVertical, PlayIcon, PlusCircle, ShuffleIcon } from "lucide-react";
 import DataTableSong from "./DataTableSong";
 import SearchGhost from "@/components/SearchGhost";
 import DropdownmenuShortPlaylist from "@/components/dropdownmenu/DropdownmenuShortPlaylist";
+import DropdownmenuPlaylist from "@/components/dropdownmenu/DropdownmenuPlaylist";
 
 interface MainContentProps {
   useFor?: "playlist" | "album";
@@ -24,9 +25,15 @@ export default function MainContent(props: MainContentProps) {
           <button>
             <PlusCircle className="size-6" />
           </button>
-          <DropdownmenuAlbum>
-            <MoreVertical className="size-6" />
-          </DropdownmenuAlbum>
+          {useFor === "playlist" ? (
+            <DropdownmenuPlaylist>
+              <MoreVertical className="size-6" />
+            </DropdownmenuPlaylist>
+          ) : (
+            <DropdownmenuAlbum>
+              <MoreVertical className="size-6" />
+            </DropdownmenuAlbum>
+          )}
         </div>
         {useFor === "playlist" && (
           <div className="flex items-center gap-x-4">
