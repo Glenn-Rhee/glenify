@@ -144,7 +144,7 @@ export default function DataTableSong() {
             <TableRow key={row.id}>
               {row.getVisibleCells().map((cell) => (
                 <TableCell key={cell.id} className="py-1 h-full">
-                  <ContextMenuSong key={row.id}>
+                  <ContextMenuSong isForPlaylist key={row.id}>
                     <div className="h-full">
                       {flexRender(
                         cell.column.columnDef.cell,
