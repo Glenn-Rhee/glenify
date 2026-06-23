@@ -20,7 +20,7 @@ export default function SectionPlaylist() {
       </div>
       <div className="grid grid-cols-6 gap-4 mt-2 px-1.5">
         {Array.from({
-          length: typeof expanded === "undefined" ? 36 : expanded ? 36 : 6,
+          length: expanded ? 36 : 6,
         }).map((_, i) => (
           <div
             onClick={() => router.push("/playlist/1")}
