@@ -19,7 +19,7 @@ export default function AlbumMenuItems(props: AlbumMenuItemsProps) {
       </menu.Item>
       <menu.Separator />
       <ItemOverlayPlaylist menu={menu} />
-      <ItemOverlayShare menu={menu}/>
+      <ItemOverlayShare menu={menu} />
     </>
   );
 }
