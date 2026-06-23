@@ -1,6 +1,6 @@
 "use client";
 import BannerContainer from "@/components/BannerContainer";
-import ContextMenuLibraryItems from "@/components/contextmenu/ContextMenuLibraryItems";
+import ContextMenuLibraryItems from "@/components/contextmenu/ContextMenuPlaylist";
 import HeaderBanner from "@/components/HeaderBanner";
 import Image from "next/image";
 import Link from "next/link";
