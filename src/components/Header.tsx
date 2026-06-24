@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 export default function Header() {
   const [isSearchFocus, setIsSearchFocus] = useState<boolean>(false);
+  const [searchValue, setSearchValue] = useState<string>("");
   const pathname = usePathname();
   const router = useRouter();
   return (
@@ -39,9 +40,11 @@ export default function Header() {
             onBlur={() => setIsSearchFocus(false)}
             onKeyUp={(e) => {
               if (e.key === "Enter") {
-                router.push("/search?query=cihuy");
+                router.push("/search?query=" + searchValue.trim());
               }
             }}
+            onChange={(e) => setSearchValue(e.target.value)}
+            value={searchValue}
             className="w-124 bg-transparent placeholder:font-medium focus-visible:border-ring focus:outline-none placeholder:text-sm transition-all"
           />
         </div>
