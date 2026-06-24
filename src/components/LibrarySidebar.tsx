@@ -27,7 +27,7 @@ import {
 } from "./ui/context-menu";
 import LibrarySidebarItems from "./LibrarySidebarItems";
 import { ContextMap } from "./contextmenu/ContextMenuSong";
-import ContextMenuLibraryItems from "./contextmenu/ContextMenuLibraryItems";
+import ContextMenuPlaylist from "./contextmenu/ContextMenuPlaylist";
 
 export default function LibrarySidebar() {
   usePageShow();
@@ -83,7 +83,7 @@ export default function LibrarySidebar() {
             <SidebarGroup>
               <SidebarMenu className={"gap-y-2"}>
                 {Array.from({ length: 50 }).map((_, i) => (
-                  <ContextMenuLibraryItems key={i}>
+                  <ContextMenuPlaylist key={i}>
                     <ContainerSong key={`${pathname}-${i}`} href="/playlist/1">
                       <SidebarMenuItem className="flex items-center gap-x-4">
                         <ImageTriggerSong
@@ -104,7 +104,7 @@ export default function LibrarySidebar() {
                         ) : null}
                       </SidebarMenuItem>
                     </ContainerSong>
-                  </ContextMenuLibraryItems>
+                  </ContextMenuPlaylist>
                 ))}
               </SidebarMenu>
             </SidebarGroup>
