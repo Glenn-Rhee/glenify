@@ -10,7 +10,7 @@ export default function ItemOverlayPlaylist(props: ItemOverlayPlaylistProps) {
   return (
     <menu.Sub>
       <menu.SubTrigger>
-        <PlusIcon className="size-4" /> Add to other playlist
+        <PlusIcon className="size-4" /> Add to playlist
       </menu.SubTrigger>
       <menu.SubContent className="w-64 mx-3 px-2 py-1.5 rounded-sm! space-y-2">
         <div className="flex items-center gap-2">
