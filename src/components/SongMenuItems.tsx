@@ -35,16 +35,19 @@ export interface ItemsOverlay {
 
 interface SongMenuItemsProps {
   menu: ItemsOverlay;
+  isForPlaylist?: boolean;
 }
 
 export default function SongMenuItems(props: SongMenuItemsProps) {
-  const { menu } = props;
+  const { menu, isForPlaylist = false } = props;
   return (
     <>
       <ItemOverlayPlaylist menu={menu} />
-      <menu.Item>
-        <MinusCircle className="size-4" /> Remove From This Playlist
-      </menu.Item>
+      {isForPlaylist ? (
+        <menu.Item>
+          <MinusCircle className="size-4" /> Remove From This Playlist
+        </menu.Item>
+      ) : null}
       <menu.Item>
         <PlusCircleIcon className="size-4" /> Save to your liked songs
       </menu.Item>
