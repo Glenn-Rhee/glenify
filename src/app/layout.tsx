@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       "Glenify is a music streaming platform where you can discover, listen, and enjoy music from artists around the world.",
     url: "https://glenify.com",
+    siteName: "Glenify",
   },
 };
 
