@@ -9,7 +9,9 @@ export const metadata: Metadata = {
   keywords: ["music", "streaming", "music platform", "listen music", "glenify"],
   openGraph: {
     title: "Glenify Music Platform",
-    
+    description:
+      "Glenify is a music streaming platform where you can discover, listen, and enjoy music from artists around the world.",
+      
   },
 };
 
