@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://glenify.com/og-image.png",
-       
+        width: 1200,
+        
       },
     ],
   },
