@@ -14,7 +14,10 @@ export const metadata: Metadata = {
     url: "https://glenify.com",
     siteName: "Glenify",
     images: [
-      
+      {
+        url: "https://glenify.com/og-image.png",
+       
+      },
     ],
   },
 };
