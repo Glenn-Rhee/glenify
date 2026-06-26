@@ -14,12 +14,7 @@ export const metadata: Metadata = {
     url: "https://glenify.com",
     siteName: "Glenify",
     images: [
-      {
-        url: "https://glenify.com/og-image.png", // ganti dengan URL gambar OG kamu
-        width: 1200,
-        height: 630,
-        alt: "Glenify Music Platform",
-      },
+      
     ],
   },
 };
