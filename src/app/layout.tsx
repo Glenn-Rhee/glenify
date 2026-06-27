@@ -21,6 +21,7 @@ export const metadata: Metadata = {
         alt: "Glenify Music Platform",
       },
     ],
+    locale: "id_ID",
   },
 };
 
