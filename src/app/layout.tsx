@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       },
     ],
     locale: "id_ID",
+    type: "website",
   },
 };
 
