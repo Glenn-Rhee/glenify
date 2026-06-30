@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       },
     ],
     locale: "id_ID",
-    type: "music.p",
+    type: "music.pl",
   },
 };
 
