@@ -14,7 +14,7 @@ export default function AlbumList(props: AlbumListProps) {
 
   return (
     <ContextMenuAlbum>
-      <div className="grid grid-cols-6 gap-4 mt-2 px-1.5">
+      <div className="grid grid-cols-6 gap-4 mt-2">
         {Array.from({
           length: typeof expanded === "undefined" ? 36 : expanded ? 36 : 6,
         }).map((_, i) => (
@@ -22,7 +22,7 @@ export default function AlbumList(props: AlbumListProps) {
             onClick={() => router.push("/album/1")}
             role="button"
             key={i}
-            className="flex flex-col items-center justify-self-center w-full max-w-32 gap-y-1 group/album hover:bg-white/10 transition-colors py-1.5 px-2 rounded-md cursor-pointer"
+            className="flex flex-col items-center justify-self-center-safe w-full gap-y-1 group/album hover:bg-white/10 transition-colors p-1.5 rounded-md cursor-pointer"
           >
             <div className="relative w-full">
               <Image
@@ -30,7 +30,7 @@ export default function AlbumList(props: AlbumListProps) {
                 alt="Album profile"
                 width={200}
                 height={200}
-                className="aspect-square object-cover rounded-md w-full"
+                className="aspect-square object-cover rounded-md"
               />
               <button
                 onClick={(e) => {
@@ -43,8 +43,10 @@ export default function AlbumList(props: AlbumListProps) {
               </button>
             </div>
             <div className="flex flex-col w-full gap-y-1">
-              <h6 className="font-semibold truncate">Lover</h6>
-              <span className="truncate">Taylor Swift</span>
+              <h6 className="font-medium text-lg truncate">Lover</h6>
+              <span className="truncate text-sm font-semibold text-muted-foreground">
+                2024 | Taylor Swift
+              </span>
             </div>
           </div>
         ))}
