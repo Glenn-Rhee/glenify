@@ -1,6 +1,8 @@
 import Container from "@/components/Container";
+import AlbumList from "@/components/pages/home/AlbumList";
 import Alltabs from "@/components/pages/search/Alltabs";
 import SongTabs from "@/components/pages/search/SongTabs";
+import Playlist from "@/components/Playlist";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface SearchPageProps {
@@ -12,7 +14,7 @@ export default async function SearchPage(props: SearchPageProps) {
 
   return (
     <Container>
-      <Tabs defaultValue="song" className="mt-4">
+      <Tabs defaultValue="all" className="mt-4">
         <TabsList className="bg-background max-w-108 w-full gap-x-4 mb-2 sticky top-2 left-0 right-0 z-80">
           <TabsTrigger
             value="all"
@@ -50,6 +52,12 @@ export default async function SearchPage(props: SearchPageProps) {
         </TabsContent>
         <TabsContent value="song">
           <SongTabs />
+        </TabsContent>
+        <TabsContent value="album">
+          <AlbumList />
+        </TabsContent>
+        <TabsContent value="playlist">
+          <Playlist />
         </TabsContent>
       </Tabs>
     </Container>

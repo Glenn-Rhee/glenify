@@ -29,7 +29,7 @@ export default function ArtistList(props: ArtistListProps) {
                 height={110}
                 className="aspect-square object-cover rounded-full"
               />
-              <button className="size-10 group-hover/artist:opacity-100 opacity-0 transition-all absolute bottom-2 -right-2 bg-primary flex items-center justify-center rounded-full">
+              <button className="size-10 group-hover/artist:opacity-100 opacity-0 transition-all absolute bottom-1 right-2 bg-primary flex items-center justify-center rounded-full">
                 <PlayIcon fill="white" className="size-6" />
               </button>
             </div>
