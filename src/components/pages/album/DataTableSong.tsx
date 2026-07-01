@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/table";
 import ColumnTableValidation from "@/validation/column-table-validation";
 import {
+  ColumnDef,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -18,104 +19,17 @@ import z from "zod";
 import { columnsSong } from "./columns";
 import ContextMenuSong from "@/components/contextmenu/ContextMenuSong";
 
-const songs: z.infer<typeof ColumnTableValidation.SCHEMASONGS>[] = [
-  {
-    DataSong: {
-      Title: "Blinding Lights",
-      Artist: "The Weeknd",
-      ArtistId: "artist_001",
-    },
-    Plays: 3200000000,
-    Duration: 200,
-  },
-  {
-    DataSong: {
-      Title: "Shape of You",
-      Artist: "Ed Sheeran",
-      ArtistId: "artist_002",
-    },
-    Plays: 3100000000,
-    Duration: 234,
-  },
-  {
-    DataSong: {
-      Title: "Someone Like You",
-      Artist: "Adele",
-      ArtistId: "artist_003",
-    },
-    Plays: 2800000000,
-    Duration: 285,
-  },
-  {
-    DataSong: {
-      Title: "Uptown Funk",
-      Artist: "Mark Ronson ft. Bruno Mars",
-      ArtistId: "artist_004",
-    },
-    Plays: 2500000000,
-    Duration: 270,
-  },
-  {
-    DataSong: {
-      Title: "Stay With Me",
-      Artist: "Sam Smith",
-      ArtistId: "artist_005",
-    },
-    Plays: 1900000000,
-    Duration: 172,
-  },
-  {
-    DataSong: {
-      Title: "Levitating",
-      Artist: "Dua Lipa",
-      ArtistId: "artist_006",
-    },
-    Plays: 1750000000,
-    Duration: 203,
-  },
-  {
-    DataSong: {
-      Title: "Rolling in the Deep",
-      Artist: "Adele",
-      ArtistId: "artist_003",
-    },
-    Plays: 2600000000,
-    Duration: 228,
-  },
-  {
-    DataSong: {
-      Title: "Bad Guy",
-      Artist: "Billie Eilish",
-      ArtistId: "artist_007",
-    },
-    Plays: 2100000000,
-    Duration: 194,
-  },
-  {
-    DataSong: {
-      Title: "Happier",
-      Artist: "Marshmello ft. Bastille",
-      ArtistId: "artist_008",
-    },
-    Plays: 1600000000,
-    Duration: 214,
-  },
-  {
-    DataSong: {
-      Title: "Peaches",
-      Artist: "Justin Bieber",
-      ArtistId: "artist_009",
-    },
-    Plays: 1400000000,
-    Duration: 198,
-  },
-];
+interface DataTableSongProps {
+  columns: ColumnDef<z.infer<typeof ColumnTableValidation.SCHEMASONGS>>[];
+  songs: z.infer<typeof ColumnTableValidation.SCHEMASONGS>[];
+}
 
-export default function DataTableSong() {
+export default function DataTableSong(props: DataTableSongProps) {
+  const { columns, songs } = props;
   // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data: songs,
-    columns: columnsSong,
+    columns,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
   });
@@ -141,7 +55,7 @@ export default function DataTableSong() {
       <TableBody>
         {table.getRowModel().rows.length ? (
           table.getRowModel().rows.map((row) => (
-            <TableRow key={row.id}>
+            <TableRow className="group/option" key={row.id}>
               {row.getVisibleCells().map((cell) => (
                 <TableCell key={cell.id} className="py-1 h-full">
                   <ContextMenuSong isForPlaylist key={row.id}>

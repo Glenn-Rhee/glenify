@@ -1,3 +1,4 @@
+"use client";
 import Container from "@/components/Container";
 import DropdownmenuAlbum from "@/components/dropdownmenu/DropdownmenuAlbum";
 import { MoreVertical, PlayIcon, PlusCircle, ShuffleIcon } from "lucide-react";
@@ -5,6 +6,7 @@ import DataTableSong from "./DataTableSong";
 import SearchGhost from "@/components/SearchGhost";
 import DropdownmenuShortPlaylist from "@/components/dropdownmenu/DropdownmenuShortPlaylist";
 import DropdownmenuPlaylist from "@/components/dropdownmenu/DropdownmenuPlaylist";
+import { columnsSong, songs } from "./columns";
 
 interface MainContentProps {
   useFor?: "playlist" | "album";
@@ -42,7 +44,7 @@ export default function MainContent(props: MainContentProps) {
           </div>
         )}
       </div>
-      <DataTableSong />
+      <DataTableSong columns={columnsSong} songs={songs} />
     </Container>
   );
 }

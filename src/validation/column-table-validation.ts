@@ -6,6 +6,7 @@ export default class ColumnTableValidation {
       Title: z.string(),
       Artist: z.string(),
       ArtistId: z.string(),
+      Album: z.string()
     }),
     Plays: z.number(),
     Duration: z.number(),

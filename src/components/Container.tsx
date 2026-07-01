@@ -10,7 +10,7 @@ export default function Container(props: ContainerProps) {
   return (
     <div
       className={cn(
-        "px-4 py-2 w-full overflow-x-hidden overflow-y-auto no-scrollbar pb-56",
+        "px-4 py-2 w-full overflow-x-hidden overflow-y-auto no-scrollbar pb-56 max-w-8xl",
         className,
       )}
       {...otherProps}
