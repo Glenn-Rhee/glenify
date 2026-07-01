@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import AlbumList from "@/components/pages/home/AlbumList";
+import ArtistList from "@/components/pages/home/ArtistList";
 import Alltabs from "@/components/pages/search/Alltabs";
 import SongTabs from "@/components/pages/search/SongTabs";
 import Playlist from "@/components/Playlist";
@@ -58,6 +59,9 @@ export default async function SearchPage(props: SearchPageProps) {
         </TabsContent>
         <TabsContent value="playlist">
           <Playlist />
+        </TabsContent>
+        <TabsContent value="artist">
+          <ArtistList />
         </TabsContent>
       </Tabs>
     </Container>
