@@ -34,7 +34,6 @@ export default function LibrarySidebar() {
   const pathname = usePathname();
   const { open } = useSidebar();
   const [isplaying, setIsPlaying] = useState(false);
-  if (pathname.includes("/auth")) return null;
   return (
     <ContextMenu>
       <ContextMenuTrigger>

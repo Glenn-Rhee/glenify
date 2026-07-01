@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import Footer from "./Footer";
 import Header from "./Header";
 import LibrarySidebar from "./LibrarySidebar";
@@ -12,6 +13,9 @@ interface ProvidersProps {
 }
 export default function Providers(props: ProvidersProps) {
   const { children } = props;
+  const pathname = usePathname();
+
+  if (pathname.includes("/auth")) return <>{children}</>;
   return (
     <TooltipProvider>
       <div className="flex flex-col h-screen">
